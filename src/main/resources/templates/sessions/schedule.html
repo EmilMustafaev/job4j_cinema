@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Расписание - Кинотеатр</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div th:replace="blocks/header :: header"></div>
+<div class="container mt-4">
+    <h1>Расписание</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Фильм</th>
+            <th>Зал</th>
+            <th>Начало</th>
+            <th>Конец</th>
+            <th>Цена</th>
+            <th>Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="session : ${sessions}">
+            <td th:text="${session.filmName}"></td>
+            <td th:text="${session.hallName}"></td>
+            <td th:text="${session.startTime}"></td>
+            <td th:text="${session.endTime}"></td>
+            <td th:text="${session.price}"></td>
+            <td>
+                <a th:href="@{/tickets/buy/{id}(id=${session.id})}" class="btn btn-primary">Купить</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div th:replace="blocks/footer :: footer"></div>
+</body>
+</html>
