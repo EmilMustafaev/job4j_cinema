@@ -6,19 +6,19 @@ import java.util.Objects;
 public class User {
     public static final Map<String, String> COLUMN_MAPPING = Map.of(
             "id", "id",
-            "full_name", "fullName",
+            "name", "name",
             "email", "email",
             "password", "password"
     );
 
         private int id;
-        private String fullName;
+        private String name;
         private String email;
         private String password;
 
-        public User(int id, String fullName, String email, String password) {
+        public User(int id, String name, String email, String password) {
             this.id = id;
-            this.fullName = fullName;
+            this.name = name;
             this.email = email;
             this.password = password;
         }
@@ -34,12 +34,12 @@ public class User {
             this.id = id;
         }
 
-        public String getFullName() {
-            return fullName;
+        public String getName() {
+            return name;
         }
 
-        public void setFullName(String fullName) {
-            this.fullName = fullName;
+        public void setName(String fullName) {
+            this.name = name;
         }
 
         public String getEmail() {

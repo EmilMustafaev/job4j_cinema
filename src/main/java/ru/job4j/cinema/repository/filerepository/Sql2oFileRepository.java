@@ -1,8 +1,9 @@
-package ru.job4j.cinema.repository;
+package ru.job4j.cinema.repository.filerepository;
 
 import org.springframework.stereotype.Repository;
 import org.sql2o.Sql2o;
 import ru.job4j.cinema.model.File;
+import ru.job4j.cinema.repository.filerepository.FileRepository;
 
 import java.util.Optional;
 @Repository

@@ -1,4 +1,4 @@
-package ru.job4j.cinema.repository;
+package ru.job4j.cinema.repository.hallrepository;
 
 import ru.job4j.cinema.model.Hall;
 

@@ -1,8 +1,9 @@
-package ru.job4j.cinema.service;
+package ru.job4j.cinema.service.userservice;
 
 import org.springframework.stereotype.Service;
 import ru.job4j.cinema.model.User;
-import ru.job4j.cinema.repository.UserRepository;
+import ru.job4j.cinema.repository.userrepository.UserRepository;
+import ru.job4j.cinema.service.userservice.UserService;
 
 import java.util.Optional;
 

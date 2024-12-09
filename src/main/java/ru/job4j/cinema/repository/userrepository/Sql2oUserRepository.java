@@ -1,12 +1,13 @@
-package ru.job4j.cinema.repository;
+package ru.job4j.cinema.repository.userrepository;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import org.sql2o.Sql2o;
 import org.sql2o.Sql2oException;
-import ru.job4j.cinema.model.Film;
 import ru.job4j.cinema.model.User;
+import ru.job4j.cinema.repository.ticketrepository.Sql2oTicketRepository;
+import ru.job4j.cinema.repository.userrepository.UserRepository;
 
 import java.util.Optional;
 @Repository
@@ -60,7 +61,7 @@ public class Sql2oUserRepository implements UserRepository {
                       """;
             var query = connection.createQuery(sql, true)
                     .addParameter("email", user.getEmail())
-                    .addParameter("name", user.getFullName())
+                    .addParameter("name", user.getName())
                     .addParameter("password", user.getPassword());
             int generatedId = query.executeUpdate().getKey(Integer.class);
             user.setId(generatedId);

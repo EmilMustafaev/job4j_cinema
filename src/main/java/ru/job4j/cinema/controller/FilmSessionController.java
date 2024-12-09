@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import ru.job4j.cinema.service.FilmSessionService;
+import ru.job4j.cinema.service.filmsessionservice.FilmSessionService;
 
 @Controller
 @RequestMapping("/sessions")
@@ -28,7 +28,7 @@ public class FilmSessionController {
         var sessionOptional = filmSessionService.findSessionById(id);
         if (sessionOptional.isEmpty()) {
             model.addAttribute("message", "Данного сеанса не существует, выберите другой!");
-            return "errors/ticket_error";
+            return "error";
         }
         return "tickets/buy";
     }

@@ -7,8 +7,8 @@
                     <a class="nav-item nav-link" href="/">Главная</a>
                     <a class="nav-item nav-link" th:href="@{/schedule}">Расписание</a>
                     <a class="nav-item nav-link" th:href="@{/films}">Кинотека</a>
-                    <a class="nav-item nav-link" th:if="${user.fullName == 'Гость'}" th:href="@{/users/login}">Купить билет</a>
-                    <a class="nav-item nav-link" th:if="${user.fullName != 'Гость'}" th:href="@{/buy}">Купить билет</a>
+                    <a class="nav-item nav-link" th:if="${user.name == 'Гость'}" th:href="@{/users/login}">Купить билет</a>
+                    <a class="nav-item nav-link" th:if="${user.name != 'Гость'}" th:href="@{/buy}">Купить билет</a>
 
                 </div>
                 <!-- Для неавторизованных пользователей -->
@@ -19,7 +19,7 @@
 
                 <!-- Для авторизованных пользователей -->
                 <div class="d-flex" th:if="${user != null}">
-                    <a class="nav-link text-secondary me-3" href="#" th:text="${user.fullName}"></a>
+                    <a class="nav-link text-secondary me-3" href="#" th:text="${user.name}"></a>
                     <a class="nav-link text-secondary" th:href="@{/users/logout}">Выйти</a>
                 </div>
             </div>

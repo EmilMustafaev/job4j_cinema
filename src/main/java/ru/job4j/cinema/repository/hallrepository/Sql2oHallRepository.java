@@ -1,9 +1,9 @@
-package ru.job4j.cinema.repository;
+package ru.job4j.cinema.repository.hallrepository;
 
 import org.springframework.stereotype.Repository;
 import org.sql2o.Sql2o;
-import ru.job4j.cinema.model.Film;
 import ru.job4j.cinema.model.Hall;
+import ru.job4j.cinema.repository.hallrepository.HallRepository;
 
 import java.util.List;
 import java.util.Optional;

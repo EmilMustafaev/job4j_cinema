@@ -3,10 +3,9 @@ package ru.job4j.cinema.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
+import ru.job4j.cinema.dto.TicketDto;
 import ru.job4j.cinema.model.Ticket;
-import ru.job4j.cinema.service.FilmSessionService;
-import ru.job4j.cinema.service.TicketService;
+import ru.job4j.cinema.service.ticketservice.TicketService;
 
 import java.util.Optional;
 
@@ -22,26 +21,38 @@ public class TicketController {
 
     @PostMapping("/buy")
     public String buyTicket(
-            @RequestParam int sessionId,
-            @RequestParam int rowNumber,
-            @RequestParam int placeNumber,
-            @RequestParam int userId,
+            @RequestBody TicketDto ticketDTO,
             Model model
     ) {
-        Optional<Ticket> ticketOptional = ticketService.buyTicket(sessionId, rowNumber, placeNumber, userId);
+        Optional<Ticket> ticketOptional = ticketService.buyTicket(
+                ticketDTO.getSessionId(),
+                ticketDTO.getRowNumber(),
+                ticketDTO.getPlaceNumber(),
+                ticketDTO.getUserId()
+        );
+
         if (ticketOptional.isEmpty()) {
             model.addAttribute("message", "Не удалось приобрести билет. Место уже занято.");
-            return "errors/ticket_error";
+            return "errors/error";
         }
-        model.addAttribute("ticket", ticketOptional.get());
-        return "tickets/ticket_success";
+
+        Ticket ticket = ticketOptional.get();
+        ticketDTO.setTicketId(ticket.getId());
+        ticketDTO.setSessionId(ticket.getFilmSessionId());
+        ticketDTO.setRowNumber(ticket.getRowNumber());
+        ticketDTO.setPlaceNumber(ticket.getPlaceNumber());
+        ticketDTO.setUserId(ticket.getUserId());
+
+        model.addAttribute("ticket", ticketDTO);
+        return "tickets/success";
     }
+
 
 
     @GetMapping("/my")
     public String getUserTickets(@RequestParam int userId, Model model) {
         var tickets = ticketService.findTicketsByUser(userId);
         model.addAttribute("tickets", tickets);
-        return "tickets/my_tickets";
+        return "tickets/tickets";
     }
 }
