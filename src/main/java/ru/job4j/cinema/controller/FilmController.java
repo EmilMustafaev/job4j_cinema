@@ -17,7 +17,7 @@ public class FilmController {
     }
 
 
-    @GetMapping("/films")
+    @GetMapping
     public String getAllFilms(Model model) {
         model.addAttribute("films", filmService.findAllFilms());
         return "films/listfilms";

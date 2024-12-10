@@ -1,8 +1,7 @@
-package ru.job4j.cinema.repository.filmrepository;
+package ru.job4j.cinema.repository.film;
 
 import ru.job4j.cinema.model.Film;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 

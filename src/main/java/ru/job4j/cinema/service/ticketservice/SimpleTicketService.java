@@ -2,9 +2,8 @@ package ru.job4j.cinema.service.ticketservice;
 
 import org.springframework.stereotype.Service;
 import ru.job4j.cinema.model.Ticket;
-import ru.job4j.cinema.repository.ticketrepository.TicketRepository;
+import ru.job4j.cinema.repository.ticket.TicketRepository;
 import ru.job4j.cinema.service.filmsessionservice.FilmSessionService;
-import ru.job4j.cinema.service.ticketservice.TicketService;
 
 import java.util.List;
 import java.util.Optional;

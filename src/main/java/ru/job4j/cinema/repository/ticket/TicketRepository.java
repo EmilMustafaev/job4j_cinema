@@ -1,4 +1,4 @@
-package ru.job4j.cinema.repository.ticketrepository;
+package ru.job4j.cinema.repository.ticket;
 
 import ru.job4j.cinema.model.Ticket;
 

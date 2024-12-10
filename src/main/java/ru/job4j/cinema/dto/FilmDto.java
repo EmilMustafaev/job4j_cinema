@@ -9,7 +9,9 @@ public class FilmDto {
     private int durationInMinutes;
     private String genre;
 
-    public FilmDto(int id, String name, String description, int year, int minimalAge, int durationInMinutes, String genre) {
+    private String posterPath;
+
+    public FilmDto(int id, String name, String description, int year, int minimalAge, int durationInMinutes, String genre, String posterPath) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -17,6 +19,15 @@ public class FilmDto {
         this.minimalAge = minimalAge;
         this.durationInMinutes = durationInMinutes;
         this.genre = genre;
+        this.posterPath = posterPath;
+    }
+
+    public String getPosterPath() {
+        return posterPath;
+    }
+
+    public void setPosterPath(String posterPath) {
+        this.posterPath = posterPath;
     }
 
     public int getId() {

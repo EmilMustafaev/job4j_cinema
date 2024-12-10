@@ -1,9 +1,9 @@
 INSERT INTO files (name, path) VALUES
-('Poster for Film 1', 'files/постер_мальчишник_в_вегасе.jpg'),
-('Poster for Film 2', 'files/постер_заклятие.jpg'),
-('Poster for Film 3', 'files/постер_воин.jpg'),
-('Poster for Film 4', 'files/постер_гнев_человеческий.jpg'),
-('Poster for Film 5', 'files/постер_остров проклятых.jpg');
+('Poster for Film 1', 'files/poster_malchishnik_v_vegase.jpg'),
+('Poster for Film 2', 'files/poster_zaklyatie.jpg'),
+('Poster for Film 3', 'files/poster_voin.jpg'),
+('Poster for Film 4', 'files/poster_gnev_chelovecheskiy.jpg'),
+('Poster for Film 5', 'files/poster_ostrov_proklyatyh.jpg');
 
 INSERT INTO genres (name) VALUES
 ('Comedy'),

@@ -1,4 +1,4 @@
-package ru.job4j.cinema.repository.userrepository;
+package ru.job4j.cinema.repository.user;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,8 +6,7 @@ import org.springframework.stereotype.Repository;
 import org.sql2o.Sql2o;
 import org.sql2o.Sql2oException;
 import ru.job4j.cinema.model.User;
-import ru.job4j.cinema.repository.ticketrepository.Sql2oTicketRepository;
-import ru.job4j.cinema.repository.userrepository.UserRepository;
+import ru.job4j.cinema.repository.ticket.Sql2oTicketRepository;
 
 import java.util.Optional;
 @Repository

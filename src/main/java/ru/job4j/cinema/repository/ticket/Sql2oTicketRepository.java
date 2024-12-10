@@ -1,4 +1,4 @@
-package ru.job4j.cinema.repository.ticketrepository;
+package ru.job4j.cinema.repository.ticket;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

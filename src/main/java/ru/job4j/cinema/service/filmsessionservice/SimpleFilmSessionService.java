@@ -2,11 +2,10 @@ package ru.job4j.cinema.service.filmsessionservice;
 
 import org.springframework.stereotype.Service;
 import ru.job4j.cinema.dto.FilmSessionDto;
-import ru.job4j.cinema.repository.filmrepository.FilmRepository;
-import ru.job4j.cinema.repository.filmsessionrepository.FilmSessionRepository;
-import ru.job4j.cinema.repository.hallrepository.HallRepository;
-import ru.job4j.cinema.repository.ticketrepository.TicketRepository;
-import ru.job4j.cinema.service.filmsessionservice.FilmSessionService;
+import ru.job4j.cinema.repository.film.FilmRepository;
+import ru.job4j.cinema.repository.filmsession.FilmSessionRepository;
+import ru.job4j.cinema.repository.hall.HallRepository;
+import ru.job4j.cinema.repository.ticket.TicketRepository;
 
 import java.util.List;
 import java.util.Optional;

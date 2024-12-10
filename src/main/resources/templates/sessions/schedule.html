@@ -20,14 +20,14 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="session : ${sessions}">
-            <td th:text="${session.filmName}"></td>
-            <td th:text="${session.hallName}"></td>
-            <td th:text="${session.startTime}"></td>
-            <td th:text="${session.endTime}"></td>
-            <td th:text="${session.price}"></td>
+        <tr th:each="filmSession : ${filmSessions}">
+            <td th:text="${filmSession.filmName}"></td>
+            <td th:text="${filmSession.hallName}"></td>
+            <td th:text="${filmSession.startTime}"></td>
+            <td th:text="${filmSession.endTime}"></td>
+            <td th:text="${filmSession.price}"></td>
             <td>
-                <a th:href="@{/tickets/buy/{id}(id=${session.id})}" class="btn btn-primary">Купить</a>
+                <a th:href="@{/tickets/buy/{id}(id=${filmSession.id})}" class="btn btn-primary">Купить</a>
             </td>
         </tr>
         </tbody>

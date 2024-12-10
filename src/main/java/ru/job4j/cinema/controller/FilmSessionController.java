@@ -17,9 +17,14 @@ public class FilmSessionController {
         this.filmSessionService = filmSessionService;
     }
 
+    @GetMapping
+    public String sessionsHome() {
+        return "redirect:/sessions/schedule";
+    }
+
     @GetMapping("/schedule")
     public String getAllSessions(Model model) {
-        model.addAttribute("sessions", filmSessionService.findAllSessions());
+        model.addAttribute("filmSessions", filmSessionService.findAllSessions());
         return "sessions/schedule";
     }
 
