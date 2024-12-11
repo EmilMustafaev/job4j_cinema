@@ -11,7 +11,11 @@ public class FilmDto {
 
     private String posterPath;
 
-    public FilmDto(int id, String name, String description, int year, int minimalAge, int durationInMinutes, String genre, String posterPath) {
+    private int fileId;
+
+    public FilmDto(int id, String name, String description, int year,
+                   int minimalAge, int durationInMinutes,
+                   String genre, String posterPath, int fileId) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -20,6 +24,15 @@ public class FilmDto {
         this.durationInMinutes = durationInMinutes;
         this.genre = genre;
         this.posterPath = posterPath;
+        this.fileId = fileId;
+    }
+
+    public int getFileId() {
+        return fileId;
+    }
+
+    public void setFileId(int fileId) {
+        this.fileId = fileId;
     }
 
     public String getPosterPath() {

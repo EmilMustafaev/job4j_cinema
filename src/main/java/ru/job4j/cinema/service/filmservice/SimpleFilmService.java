@@ -53,7 +53,8 @@ public class SimpleFilmService implements FilmService {
                             film.getMinimalAge(),
                             film.getDurationInMinutes(),
                             genre,
-                            posterPath
+                            posterPath,
+                            film.getFileId()
                     );
                 })
                 .toList();
@@ -77,7 +78,9 @@ public class SimpleFilmService implements FilmService {
                     film.getMinimalAge(),
                     film.getDurationInMinutes(),
                     genre,
-                    posterPath
+                    posterPath,
+                    film.getFileId()
+
             );
         });
     }
